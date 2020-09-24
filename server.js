@@ -13,3 +13,18 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
     console.log("Server funcionando en puerto 3000");
 });
+
+//Configuracion y conexion de la base de datos en el servidor
+const dbConfig = require('./config/database.config');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect(dbConfig.url, {
+    useNewUrlParser: true
+}).then(() => {
+    console.log("Conexion a la Base de Datos!");
+}).catch(err => {
+    console.log('No hay conexion a la BD ', err);
+    process.exit();
+});
