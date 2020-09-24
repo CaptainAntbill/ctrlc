@@ -47,7 +47,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     Computer.findById(req.params.computerId)
     .then(computer => {
-        if(!note) {
+        if(!computer) {
             return res.status(404).send({
                 message: "Registro no encontrado id " + req.params.computerId
             });
@@ -91,7 +91,7 @@ exports.update = (req, res) => {
                 message: "Registro no encontrado " + req.computer.computerId
             });
         }
-        res.send(note);
+        res.send(computer);
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
