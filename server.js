@@ -1,14 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
+var cors = require("cors");
 //Se crea la apliacion express
 const app = express();
+//headers
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json())
 app.get('/', (req, res) => {
     res.json({"message": "Bienvenido a la aplicacion!"});
 });
+
+//Definiendo rutas en servidor
+require('./app/routes/computer.routes.js') (app);
 
 app.listen(3000, () => {
     console.log("Server funcionando en puerto 3000");
