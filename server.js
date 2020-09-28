@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 
 //Definiendo rutas en servidor
 require('./app/routes/computer.routes.js') (app);
+require('./app/routes/gadget.routes.js') (app);
 
 app.listen(3000, () => {
     console.log("Server funcionando en puerto 3000");
