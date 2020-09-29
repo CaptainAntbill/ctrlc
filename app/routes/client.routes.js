@@ -1,8 +1,8 @@
 module.exports = (app) => {
     const clients = require('../controllers/client.controller.js');
-    //Crea nuevo  gadget
+    //Crea nuevo  
     app.post('/clients', clients.create);
-    //Lista de gadget
+    //Lista de 
     app.get('/clients', clients.findAll);
     //Obtener un dato mediante Id
     app.get('/clients/:clientId', clients.findOne);
