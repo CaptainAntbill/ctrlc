@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.minn.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <title>CtrlC Clientes</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">CtrlC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="indexcomputer.html">Computadores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="indexgadget.html">Accesorios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="indexservice.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="indexclient.html">Clientes</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="indexpurchase.html">Pedidos</a>
+            </li>
+          </ul>
+        </div>
+      </nav><br>
+      <div class="container jumbotron bg-secondary">
+        <h2 class="display-4">Cartera de Clientes</h2>
+        <p class="lead text-white">Principales Clientes de la empresa.</p>
+        <hr class="my-4">
+      </div>
+      <div class="container">
+        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModalCenter" data-whatever="@mdo">Nuevo Registro</button>
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered"" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Nuevo Cliente.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label class="col-form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" required name="nombre" placeholder="Ingrese nuevo nombre">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">Telefono:</label>
+                    <input type="text" class="form-control" id="telefono" required name="telefono" placeholder="Ingrese Telefono">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">Direccion:</label>
+                    <input type="text" class="form-control" id="direccion" required name="direccion" placeholder="Ingrese Direccion">
+                  </div>
+                    <button type="button" id="guardar" class="btn btn-outline-primary">Enviar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <!-- <div id="buscar">
+        <input type="text" class="search" placeholder="Buscar">-->
+        <div class="container table-responsive">
+          <table class="list table table-hover">
+            <thead>
+              <tr> 
+                <th scope="col">Nombre</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Direccion</th>
+                <th colspan="2">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="clients">
+            </tbody>
+          </table>
+        </div>
+      </div>
+        <script src="js/jquery-3.4.0.js"></script>
+        <script src="js/bootstrap.bundle.js"></script>
+        <script src="js/apiclient.js"></script>  
+</body>
+</html>
