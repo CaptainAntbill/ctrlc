@@ -2,7 +2,7 @@ const Purchase = require('../models/purchase.model.js');
 
 //Crear y guardar nuevo registro
 exports.create = (req, res) => {
-    if(!req.body.pedido && !req.body.precio && !req.body.fecha && !req.body.proveedor && !req.body.cantidad ) {
+    if(!req.body.pedido && !req.body.precio && !req.body.fecha && !req.body.proveedor && !req.body.cantidad && !req.body.contacto ) {
         return res.status(400).send({
             message: "Los datos no pueden estar vacios"
     });
@@ -13,7 +13,8 @@ exports.create = (req, res) => {
         precio: req.body.precio,
         fecha: req.body.fecha,
         proveedor: req.body.proveedor,
-        cantidad: req.body.cantidad
+        cantidad: req.body.cantidad,
+        contacto: req.body.contacto
     });
 
     //Registro Guardado
@@ -63,7 +64,7 @@ exports.findOne = (req, res) => {
 
 //Actualizar un registro
 exports.update = (req, res) => {
-    if(!req.body.pedido && !req.body.precio && !req.body.fecha && !req.body.proveedor && !req.body.cantidad ) {
+    if(!req.body.pedido && !req.body.precio && !req.body.fecha && !req.body.proveedor && !req.body.cantidad && !req.body.contacto) {
         return res.status(400).send({
             message: "Los pedidos no pueden estar vacios"
     });
@@ -75,7 +76,8 @@ exports.update = (req, res) => {
         precio: req.body.precio,
         fecha: req.body.fecha,
         proveedor: req.body.proveedor,
-        cantidad: req.body.cantidad
+        cantidad: req.body.cantidad,
+        contacto: req.body.contacto
     }, {new: true})
     .then(purchase => {
         if(!purchase) {

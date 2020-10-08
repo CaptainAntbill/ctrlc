@@ -5,7 +5,8 @@ const PurchaseSchema = mongoose.Schema({
     precio: Number,  
     fecha: Date, 
     proveedor: String,  
-    cantidad: Number  
+    cantidad: Number,
+    contacto: String  
 }, {
     timestamps: true
 });
