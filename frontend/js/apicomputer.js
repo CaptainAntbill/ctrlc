@@ -116,3 +116,39 @@ function deleteComputer($this) {
         });
     }
 }
+
+//Metodo filtrado por computadoras y marcas
+$(document).ready(function () {
+    $.ajax({
+        url: "http://localhost:3000/computers",
+        type: "GET",
+        success: function (res) {
+            $.each(res, function (key, val) {
+                $("#models").append(
+                    "<tr><td>" + 
+                    val.modelo + 
+                    "</td><td>"+
+                    val.precio +
+                    "</td></tr>"
+                );
+            });
+        },
+    });
+});
+
+$(document).ready(function () {
+    $.ajax({
+        url: "http://localhost:3000/computers",
+        type: "GET",
+        success: function (res) {
+            $.each(res, function (key, val) {
+                $("#marca").append(
+                    "<tr><td>" + 
+                    val.marca + 
+                    "</td>"+
+                    "</tr>"
+                );
+            });
+        },
+    });
+});
