@@ -106,3 +106,22 @@ function deleteService($this) {
         });
     }
 }
+
+//Metodo servicios
+$(document).ready(function () {
+    $.ajax({
+        url: "http://localhost:3000/services",
+        type: "GET",
+        success: function (res) {
+            $.each(res, function (key, val) {
+                $("#iservices").append(
+                    "<tr><td>" + 
+                    val.servicio + 
+                    "</td><td>" + 
+                    "</tr>"
+
+                );
+            });
+        },
+    });
+});
