@@ -118,3 +118,25 @@ $().ready(function() {
         }
     })
 });
+
+//Metodo para los proveedores
+$(document).ready(function () {
+    $.ajax({
+        url: "http://localhost:3000/purchases",
+        type: "GET",
+        success: function (res) {
+            $.each(res, function (key, val) {
+                $("#providers").append(
+                    "<tr><td>" + 
+                    val.proveedor + 
+                    "</td>" +
+                    "<td>" +
+                    val.contacto + 
+                    "</td>" +
+                    "</tr>"
+
+                );
+            });
+        },
+    });
+});
