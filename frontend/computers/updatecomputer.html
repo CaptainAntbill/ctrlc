@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.minn.css">
+    <link rel="stylesheet" href="../css/bootstrap.minn.css">
     <title>Document</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">CtrlC</a>
+        <a class="navbar-brand" href="../index.html">CtrlC</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,16 +19,16 @@
               <a class="nav-link" href="indexcomputer.html">Computadores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="indexgadget.html">Accesorios</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indexservice.html">Servicios</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indexclient.html">Clientes</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="indexpurchase.html">Pedidos</a>
+              <a class="nav-link" href="../gadgets/indexgadget.html">Accesorios</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="../service/indexservice.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="../clients/indexclient.html">Clientes</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="../purchase/indexpurchase.html">Pedidos</a>
             </li>
           </ul>
         </div>
@@ -41,43 +41,43 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="modelo_edit">Modelo</label>
-                <input type="email" class="form-control" name="modelo" id="modelo_edit" placeholder="Modelo">
+                <input type="email" class="form-control" name="modelo" required id="modelo_edit" placeholder="Modelo">
               </div>
               <div class="form-group col-md-6">
                 <label for="marca_edit">Marca</label>
-                <input type="text" class="form-control" id="marca_edit" name="marca" placeholder="Marca">
+                <input type="text" class="form-control" id="marca_edit" required name="marca" placeholder="Marca">
               </div>
             </div>
             <div class="form-group">
               <label for="procesador_edit">Procesador</label>
-              <input type="text" class="form-control" id="procesador_edit" name="procesador" placeholder="Procesador">
+              <input type="text" class="form-control" id="procesador_edit" required name="procesador" placeholder="Procesador">
             </div>
             <div class="form-group">
               <label for="ram_edit">RAM</label>
-              <input type="text" class="form-control" id="ram_edit" name="ram" placeholder="RAM">
+              <input type="text" class="form-control" id="ram_edit" name="ram" required placeholder="RAM">
             </div>
             <div class="form-row">
               <div class="form-group col-md-4">
                 <label for="disco_edit">Espacio</label>
-                <input type="text" class="form-control" placeholder="Almacenamiento" name="disco" id="disco_edit">
+                <input type="text" class="form-control" placeholder="Almacenamiento" required name="disco" id="disco_edit">
               </div>
               <div class="form-group col-md-4">
                 <label for="tarjeta_edit">Tarjeta Gráfica</label>
-                <input type="text" class="form-control" placeholder="Tarjeta Gráfica" name="tarjeta" id="tarjeta_edit">
+                <input type="text" class="form-control" placeholder="Tarjeta Gráfica" required name="tarjeta" id="tarjeta_edit">
               </div>
               <div class="form-group col-md-2">
                 <label for="cantidad_edit">Cantidad</label>
-                <input type="text" class="form-control" id="cantidad_edit" name="cantidad" placeholder="Cantidad">
+                <input type="text" class="form-control" id="cantidad_edit" required name="cantidad" placeholder="Cantidad">
               </div>
               <div class="form-group col-md-2">
                 <label for="precio_edit">Precio</label>
-                <input type="number" class="form-control" id="precio_edit" name="precio" placeholder="Precio">
+                <input type="number" class="form-control" id="precio_edit" required name="precio" placeholder="Precio">
               </div>
             </div>
             <button type="submit" id='actualizar' class="btn btn-primary">Enviar</button>
           </form>
       </div><br><br>
-    <script src="js/jquery-3.4.0.js"></script>
+    <script src="../js/jquery-3.4.0.js"></script>
     <script>
         $(document).ready(function () {
             $.ajax({
@@ -91,14 +91,14 @@
                             $('#ram_edit').val(res.ram) +
                             $('#disco_edit').val(res.disco) +
                             $('#tarjeta_edit').val(res.tarjeta) +
-                            $('#modelo_edit').val(res.modelo) +
+                            $('#cantidad_edit').val(res.cantidad) +
                             $('#precio_edit').val(res.precio) 
                         );
                 },
             });  
         });
     </script>
-    <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/apicomputer.js"></script>  
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/apicomputer.js"></script>  
 </body>
 </html>
