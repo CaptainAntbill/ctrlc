@@ -92,3 +92,23 @@ function deleteGadget($this) {
         });
     }
 }
+
+//Metodo getAll
+$(document).ready(function () {
+    $.ajax({
+        url: "http://localhost:3000/gadgets",
+        type: "GET",
+        success: function (res) {
+            $.each(res, function (key, val) {
+                $("#infgadgets").append(
+                    "<tr><td>" + 
+                    val.nombre + 
+                    "</td>" + 
+                    "<td>" + val.precio + "</td>" +
+                    "</tr>"
+
+                );
+            });
+        },
+    });
+});
