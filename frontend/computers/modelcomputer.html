@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.minn.css">
+    <title>CtrlC Computador</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">CtrlC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="indexcomputer.html">Computadores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../gadgets/indexgadget.html">Accesorios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../service/indexservice.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../clients/indexclient.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../purchase/indexpurchase.html">Pedidos</a>
+            </li>
+          </ul>
+        </div>
+      </nav><br>
+      <div class="container jumbotron bg-primary">
+        <h3 class="display-5">Control Computadores</h3>
+        <p class="lead text-white">Espacio asignado para inspeccionar el equipo de computo.</p>
+        <hr class="my-4">
+      </div>
+      <div class="container">
+          <a type="button" class="btn btn-outline-primary" href="indexcomputer.html">Regresar</a>
+        <a type="button" class="btn btn-outline-primary" href="modelcomputer.html">Modelos</a>
+        <a type="button" class="btn btn-outline-primary" href="marcacomputer.html">Marcas</a>
+      </div><br>
+      <div class="container table-responsive">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Modelo</th>
+                <th scope="col">Precio</th>
+              </tr>
+            </thead>
+            <tbody id="models">
+            </tbody>
+          </table>
+      </div>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/apicomputer.js"></script>  
+</body>
+</html>
