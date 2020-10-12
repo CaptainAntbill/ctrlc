@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.minn.css">
+    <title>Pedidos</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">CtrlC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../computers/indexcomputer.html">Computadores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../gadgets/indexgadget.html">Accesorios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../service/indexservice.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../clients/indexclient.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="indexpurchase.html">Pedidos</a>
+            </li>
+          </ul>
+        </div>
+      </nav><br>
+      <div class="container jumbotron bg-warning">
+        <h3 class="display-5">Actualizar Pedidos</h3>
+      </div>
+      <div class="container">
+        <form id="form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="pedido_edit">Pedido</label>
+                <input type="text" class="form-control" name="pedido_edit" required id="pedido_edit" placeholder="Pedido">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="proveedor_edit">Proveedor</label>
+                <input type="text" class="form-control" id="proveedor_edit" required name="proveedor" placeholder="Proveedor">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="contacto_edit">Contacto</label>
+                <input type="text" class="form-control" id="contacto_edit" required name="Contacto" placeholder="Contacto">
+              </div>  
+              <div class="form-group col-md-6">
+                  <label for="cantidad_edit">Cantidad</label>
+                  <input type="number" class="form-control" id="cantidad_edit" required name="Cantidad" placeholder="Cantidad">
+                </div>
+              </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="fecha_edit">Fecha</label>
+                <input type="text" class="form-control" id="fecha_edit" required name="fecha" placeholder="Fecha">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="precio_edit">Precio</label>
+                <input type="number" class="form-control" id="precio_edit" required pattern="(.*[0-9])" name="precio" placeholder="Precio">
+              </div>
+            </div>
+            <input type="submit" id='actualizar' value="Enviar" class="btn btn-primary">
+          </form>
+      </div><br><br>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "http://localhost:3000/purchases/" + window.location.href.split('?')[1],
+                type: "GET",
+                success: function (res) {
+                        $("#purchases").append(
+                            $('#pedido_edit').val(res.pedido) +
+                            $('#proveedor_edit').val(res.proveedor) +
+                            $('#contacto_edit').val(res.contacto) +
+                            $('#cantidad_edit').val(res.cantidad) +
+                            $('#fecha_edit').val(res.fecha) +
+                            $('#precio_edit').val(res.precio) 
+                        );
+                },
+            });  
+        });
+    </script>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/apipurchase.js"></script> 
+</body>
+</html>

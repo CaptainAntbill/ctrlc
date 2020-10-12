@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.minn.css">
+    <title>CtrlC Pedidos</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="../index.html">CtrlC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../computers/indexcomputer.html">Computadores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../gadgets/indexgadget.html">Accesorios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../service/indexservice.html">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../clients/indexclient.html">Clientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="indexpurchase.html">Pedidos</a>
+            </li>
+          </ul>
+        </div>
+      </nav><br>
+      <div class="container jumbotron bg-warning">
+        <h3 class="display-5">Pedidos</h3>
+        <p class="lead text-white">Control de los pedidos de la empresa.</p>
+        <hr class="my-4">
+      </div>
+      <div class="container">
+        <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModalCenter" data-whatever="@mdo">Nuevo Registro</button>
+        <a type="button" class="btn btn-outline-warning" href="providers.html">Proveedores</a>  
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered"" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Nuevo Pedido.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label class="col-form-label">Pedido:</label>
+                    <input type="text" class="form-control" id="pedido" required pattern="" name="pedido" placeholder="Ingrese nuevo pedido">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">Proveedor:</label>
+                    <input type="text" class="form-control" id="proveedor" required name="proveedor" placeholder="Ingrese proveedor">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">Contacto:</label>
+                    <input type="text" class="form-control" id="contacto" required name="proveedor" placeholder="Ingrese Contacto del pedido">
+                  </div>
+                  <div class="row">
+                      <div class="form-group col-md-12">
+                          <label class="col-form-label">Cantidad:</label>
+                          <input type="number" class="form-control" id="cantidad" pattern="(.*[0-9])" required name="cantidad" placeholder="Ingrese cantidad">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="col-form-label">Fecha del pedido:</label>
+                            <input type="date" class="form-control" id="fecha" required name="fecha" placeholder="Ingrese Fecha">
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label class="col-form-label">Precio:</label>
+                              <input type="number" class="form-control" id="precio" required name="precio" placeholder="Ingrese Precio">
+                          </div>
+                      </div>
+                    <button type="button" id="guardar" class="btn btn-outline-primary">Enviar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <div class="container table-responsive">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Pedido</th>
+                <th scope="col">Proveedor</th>
+                <th scope="col">Contacto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Precio</th>
+                <th colspan="2">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="purchases">
+            </tbody>
+          </table>
+      </div>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/apipurchase.js"></script>  
+</body>
+</html>
