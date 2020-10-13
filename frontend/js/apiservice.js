@@ -118,6 +118,8 @@ $(document).ready(function () {
                     "<tr><td>" + 
                     val.servicio + 
                     "</td><td>" + 
+                    val.precio + 
+                    "</td><td>" + 
                     "</tr>"
 
                 );
